@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.Frag_VietNam">
+
+    <TextView
+        android:id="@+id/tv_informationof"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Thông tin của Việt Nam"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+        //Card1
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            app:cardBackgroundColor="#f1c40f">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nhiembenhVN"
+                    style="@style/situlationtop"
+                    android:text="250" />
+
+                <TextView
+                    style="@style/situlationcenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nhi_m_b_nh" />
+                <TextView
+                    android:id="@+id/tv_tangnhiembenhVN"
+                    android:background="#e1b12c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    style="@style/situlationbot"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        //Card2
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            app:cardBackgroundColor="#e74c3c">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tuvongVN"
+                    style="@style/situlationtop"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/situlationcenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/t_vong" />
+                <TextView
+                    android:id="@+id/tv_tangtuvongVN"
+                    android:background="#c23616"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    style="@style/situlationbot"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        //Card3
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            app:cardBackgroundColor="#78e08f">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_binhphucVN"
+                    style="@style/situlationtop"
+                    android:text="250" />
+
+                <TextView
+                    style="@style/situlationcenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/b_nh_ph_c" />
+                <TextView
+                    android:id="@+id/tv_tangbinhphucVN"
+                    android:background="#4cd137"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    style="@style/situlationbot"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

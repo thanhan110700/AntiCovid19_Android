@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainActivity"
+    tools:ignore="UnusedNavigation">
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="sict.myproject.anticovid_19.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/healthyActivity"
+        android:name="sict.myproject.anticovid_19.ui.HealthyActivity"
+        android:label="activity_healthy"
+        tools:layout="@layout/activity_healthy" />
+    <activity
+        android:id="@+id/menuActivity"
+        android:name="sict.myproject.anticovid_19.ui.MenuActivity"
+        android:label="activity_menu"
+        tools:layout="@layout/activity_menu" />
+    <activity
+        android:id="@+id/requestActivity"
+        android:name="sict.myproject.anticovid_19.ui.RequestActivity"
+        android:label="activity_request"
+        tools:layout="@layout/activity_request" />
+    <activity
+        android:id="@+id/situlation_Global"
+        android:name="sict.myproject.anticovid_19.ui.Situlation_Global"
+        android:label="activity_situlation__global"
+        tools:layout="@layout/activity_situlation__global" />
+    <activity
+        android:id="@+id/situlation_VN"
+        android:name="sict.myproject.anticovid_19.ui.Situlation_VN"
+        android:label="activity_situlation__vn"
+        tools:layout="@layout/activity_situlation__vn" />
+</navigation>

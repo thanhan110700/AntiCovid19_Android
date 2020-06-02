@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AntiCovid-19</string>
+    <string name="danh_m_c">Danh mục</string>
+    <string name="trang_ch">Trang chủ</string>
+    <string name="s_c_kh_e">Sức khỏe</string>
+    <string name="ph_n_nh">Phản ánh</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="healthy">healthy</string>
+    <string name="menu">Menu</string>
+    <string name="th_ng_tin_d_ch_b_nh">Thông tin dịch bệnh</string>
+    <string name="countries">Countries</string>
+    <string name="todo">TODO</string>
+    <string name="th_ng_tin_c_a">Thông tin của</string>
+    <string name="number">Number</string>
+    <string name="text">Text</string>
+    <string name="hello">Hello</string>
+    <string name="nhi_m_b_nh">Nhiễm bệnh</string>
+    <string name="t_vong">Tử vong</string>
+    <string name="b_nh_ph_c">Bình phục</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>

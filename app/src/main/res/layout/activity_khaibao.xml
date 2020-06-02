@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.Khaibao"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="KHAI BÁO Y TẾ TỰ NGUYỆN"
+            android:textSize="25sp"
+            android:textColor="#487eb0"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.Khai thông tin cá nhân"
+            android:textColor="#192a56"
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Họ và tên *"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_hoten"
+            style="@style/edittext_khaibao" />
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Số CMT/CCCD/Hộ chiếu *"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_cmt"
+            style="@style/edittext_khaibao"
+            android:inputType="number"/>
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Mã số BHXH (Đây là thông tin quan trọng để cơ quan chức năng kiểm soát, hổ trợ bạn tốt hơn)"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_bhxh"
+            style="@style/edittext_khaibao"
+            android:inputType="number"/>
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Ngày tháng năm sinh *"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_namsinh"
+            style="@style/edittext_khaibao"
+            tools:text="@tools:sample/date/ddmmyy"
+            android:inputType="date"/>
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Giới tính *"
+
+            />
+
+        <RadioGroup
+            android:id="@+id/radio_sex"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/check_nam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nam"/>
+            <RadioButton
+                android:id="@+id/check_nu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nữ"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Quốc tịch *"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/ttcn_quoctich"
+            style="@style/edittext_khaibao" />
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Địa chỉ hiện tại *"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_diachihientai"
+            style="@style/edittext_khaibao" />
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Số điện thoại *"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_sdt"
+            style="@style/edittext_khaibao"
+            android:inputType="number"/>
+
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Email"
+             />
+
+        <EditText
+            android:id="@+id/ttcn_email"
+            style="@style/edittext_khaibao"
+            android:inputType="textEmailAddress"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="2. Thông tin bệnh cá nhân"
+            android:textColor="#192a56"
+            android:textSize="20sp" />
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Trong vòng 14 ngày, Anh/Chị có:"
+             />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ui.Khaibao"
+                >
+                <CheckBox
+                    android:id="@+id/check_tiepxucnguoibenh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Có tiếp xúc với trường hợp bệnh hoặc nghi ngờ mắc bệnh COVID-19"
+                    android:background="#dcdde1"/>
+                <CheckBox
+                    android:id="@+id/check_divetuvungdich"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Có đi về từ vùng có dịch COVID-19"
+                    android:background="#f5f6fa"/>
+                <CheckBox
+                    android:id="@+id/check_cotiepxucnguoidive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Có tiếp xúc người đi về từ vùng dịch"
+                    android:background="#dcdde1"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Trong vòng 14 ngày, Anh/Chị có đến Quốc gia/vùng lãnh thổ nào(có thể đi qua nhiều quốc gia):"
+            android:textSize="15sp" />
+        <EditText
+            android:id="@+id/ttcn_diquavunglanhtho"
+            style="@style/edittext_khaibao" />
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Trong vòng 14 ngày, Anh/Chị có thấy xuất hiện dấu hiệu nào sau đây không?"
+             />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".ui.Khaibao"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ui.Khaibao"
+                >
+                <CheckBox
+                    android:id="@+id/check_sot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sốt"
+                    android:background="#dcdde1"
+                    />
+                <CheckBox
+                    android:id="@+id/check_ho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ho"
+                    android:background="#f5f6fa"
+                    />
+                <CheckBox
+                    android:id="@+id/check_khotho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Khó thở"
+                    android:background="#dcdde1"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ui.Khaibao"
+                >
+                <CheckBox
+                    android:id="@+id/check_dauhong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đau họng"
+                    android:background="#f5f6fa"
+                    />
+                <CheckBox
+                    android:id="@+id/check_viemphoi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Viêm phổi"
+                    android:background="#dcdde1"
+                    />
+                <CheckBox
+                    android:id="@+id/check_metmoi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mệt mỏi"
+                    android:background="#f5f6fa"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+        <TextView
+            style="@style/textview_khaibao"
+            android:text="Hiện tại Anh/Chị có mắc các bệnh nào dưới đây:"
+             />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ui.Khaibao"
+                >
+                <CheckBox
+                    android:id="@+id/check_benhganmantinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bệnh gan mãn tính"
+                    android:background="#dcdde1"
+                    />
+                <CheckBox
+                    android:id="@+id/check_benhmaumantinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bệnh máu mãn tính"
+                    android:background="#f5f6fa"
+                    />
+                <CheckBox
+                    android:id="@+id/check_benhphoimantinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bệnh phổi mãn tính"
+                    android:background="#dcdde1"
+                    />
+                <CheckBox
+                    android:id="@+id/check_benhthanmantinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bệnh thận mãn tính"
+                    android:background="#f5f6fa"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <CheckBox
+            android:id="@+id/check_camket"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="Tôi cam kết các thông tin khai báo là đúng sự thật"
+            />
+        <Button
+            android:id="@+id/btn_xacnhankhaibao"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Xác nhận khai báo"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#273c75"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+</ScrollView>

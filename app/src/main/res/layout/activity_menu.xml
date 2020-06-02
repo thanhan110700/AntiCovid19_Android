@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="DANH MỤC"
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"/>
+        <Button
+            android:id="@+id/btn_menu_thongtincanhan"
+            android:drawableLeft="@drawable/ic_account"
+            android:text="Thông tin cá nhân"
+            style="@style/btn_menu"
+            />
+        <Button
+            android:id="@+id/btn_menu_giamsatcachly"
+            android:drawableLeft="@drawable/ic_security_black_24dp"
+            android:text="Giám sát cách ly"
+            android:background="#30336b"
+            style="@style/btn_menu"
+            />
+        <Button
+            android:id="@+id/btn_menu_dieukhoansudung"
+            android:drawableLeft="@drawable/ic_insert_drive_file_black_24dp"
+            android:text="Điều khoản sử dụng"
+            android:background="#30336b"
+            style="@style/btn_menu"
+            />
+        <Button
+            android:id="@+id/btn_menu_guihoidap"
+            android:drawableLeft="@drawable/ic_reply"
+            android:text="Gửi hỏi đáp"
+            android:background="#30336b"
+            style="@style/btn_menu"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="#ecf0f1"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_navigation"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
