@@ -30,45 +30,64 @@
             android:textColor="#192a56"
             android:textSize="20sp" />
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Họ và tên *"
-             />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_hovaten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_hoten"
+                style="@style/edittext_khaibao"
+                android:hint="Họ và tên *"
 
-        <EditText
-            android:id="@+id/ttcn_hoten"
-            style="@style/edittext_khaibao" />
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Số CMT/CCCD/Hộ chiếu *"
-             />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_cmt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_cmt"
+                style="@style/edittext_khaibao"
+                android:hint="Số CMT/CCCD/Hộ chiếu *"
 
-        <EditText
-            android:id="@+id/ttcn_cmt"
-            style="@style/edittext_khaibao"
-            android:inputType="number"/>
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Mã số BHXH (Đây là thông tin quan trọng để cơ quan chức năng kiểm soát, hổ trợ bạn tốt hơn)"
-             />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_bhxh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_bhxh"
+                style="@style/edittext_khaibao"
+                android:hint="Mã số Bảo hiểm xã hội "
 
-        <EditText
-            android:id="@+id/ttcn_bhxh"
-            style="@style/edittext_khaibao"
-            android:inputType="number"/>
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Ngày tháng năm sinh *"
-             />
 
-        <EditText
-            android:id="@+id/ttcn_namsinh"
-            style="@style/edittext_khaibao"
-            tools:text="@tools:sample/date/ddmmyy"
-            android:inputType="date"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_namsinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_namsinh"
+                style="@style/edittext_khaibao"
+                android:hint="Ngày sinh * "
+                android:inputType="date"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <TextView
             style="@style/textview_khaibao"
@@ -95,45 +114,64 @@
                 android:text="Nữ"/>
         </RadioGroup>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_quoctich"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Quốc tịch *"
-            android:textSize="15sp" />
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_quoctich"
+                style="@style/edittext_khaibao"
+                android:hint="Quốc tịch * "
 
-        <EditText
-            android:id="@+id/ttcn_quoctich"
-            style="@style/edittext_khaibao" />
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Địa chỉ hiện tại *"
-             />
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/ttcn_diachihientai"
-            style="@style/edittext_khaibao" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_diachihientai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_diachihientai"
+                style="@style/edittext_khaibao"
+                android:hint="Địa chỉ hiện tại *"
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Số điện thoại *"
-             />
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/ttcn_sdt"
-            style="@style/edittext_khaibao"
-            android:inputType="number"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_sdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
 
-        <TextView
-            style="@style/textview_khaibao"
-            android:text="Email"
-             />
+                android:id="@+id/ttcn_sdt"
+                style="@style/edittext_khaibao"
+                android:hint="Số điện thoại *"
 
-        <EditText
-            android:id="@+id/ttcn_email"
-            style="@style/edittext_khaibao"
-            android:inputType="textEmailAddress"/>
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ttcn_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ttcn_email"
+                style="@style/edittext_khaibao"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -312,6 +350,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:textColor="#c0392b"
             android:text="Tôi cam kết các thông tin khai báo là đúng sự thật"
             />
         <Button

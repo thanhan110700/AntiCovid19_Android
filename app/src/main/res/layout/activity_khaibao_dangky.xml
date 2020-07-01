@@ -95,7 +95,7 @@
             />
 
         <RadioGroup
-            android:id="@+id/radio_sex"
+            android:id="@+id/radio_sex_dk"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal">
@@ -142,20 +142,6 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_ttcn_sdt_dk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ttcn_sdt_dk"
-                style="@style/edittext_khaibao"
-                android:hint="Số điện thoại *"
-                android:inputType="number"
-
-                />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_ttcn_email_dk"
@@ -352,6 +338,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:textColor="#c0392b"
             android:text="Tôi cam kết các thông tin khai báo là đúng sự thật"
             />
         <Button

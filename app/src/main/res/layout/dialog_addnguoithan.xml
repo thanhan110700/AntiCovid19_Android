@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Theo dõi sức khỏe người thân"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:background="#30336b"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ và Tên *:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/et_hotennguoithan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="Nhập họ và tên người thân"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mối quan hệ *:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/et_moiquanhe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="Nhập mối quan hệ"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_nguoithan_sot"
+            android:text="Sốt"
+            style="@style/checkbox_healthy"
+            />
+        <CheckBox
+            android:id="@+id/check_nguoithan_ho"
+            android:text="Ho"
+            style="@style/checkbox_healthy"
+            />
+        <CheckBox
+            android:id="@+id/check_nguoithan_khotho"
+            android:text="Khó thở"
+            style="@style/checkbox_healthy"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_nguoithan_daunguoi"
+            android:text="Đau người, mệt mỏi"
+            style="@style/checkbox_healthy"
+            />
+        <CheckBox
+            android:id="@+id/check_nguoithan_khoemanh"
+            android:text="Khỏe mạnh"
+            style="@style/checkbox_healthy"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_guithongtinnguoithan"
+        style="@style/btn_menu"
+        android:layout_width="match_parent"
+        android:text="GỬI THÔNG TIN"
+        android:layout_marginBottom="10dp"
+        />
+
+</LinearLayout>

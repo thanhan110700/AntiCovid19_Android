@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,10 +29,13 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -47,7 +51,8 @@ public class Khaibao extends AppCompatActivity {
     String tinhhinh=" ",dauhieu=" ",macbenh=" ";
     RadioGroup rdg_sex;
     RadioButton rdb_nam,rdb_nu;
-    EditText et_hoten,et_soCMT, et_msBHXH,et_NTNS,et_Quoctich, et_diachi, et_sdt, et_Email,et_didenvunglanhtho;
+    TextInputEditText et_hoten,et_soCMT, et_msBHXH,et_NTNS,et_Quoctich, et_diachi, et_sdt, et_Email;
+    EditText et_didenvunglanhtho;
     Button btn_Xacnhan;
     CheckBox cb_camket,
             cb_tiepxucnguoibenh,
@@ -75,19 +80,17 @@ public class Khaibao extends AppCompatActivity {
         setButton();
     }
 
-    public void initView(){
-        rdb_nam.setChecked(true);
-    }
+
 
     public void Widget(){
-        et_hoten = (EditText) findViewById(R.id.ttcn_hoten);
-        et_soCMT = (EditText) findViewById(R.id.ttcn_cmt);
-        et_msBHXH = (EditText) findViewById(R.id.ttcn_bhxh);
-        et_NTNS = (EditText) findViewById(R.id.ttcn_namsinh);
-        et_Quoctich = (EditText) findViewById(R.id.ttcn_quoctich);
-        et_diachi = (EditText) findViewById(R.id.ttcn_diachihientai);
-        et_sdt = (EditText) findViewById(R.id.ttcn_sdt);
-        et_Email = (EditText) findViewById(R.id.ttcn_email);
+        et_hoten = (TextInputEditText) findViewById(R.id.ttcn_hoten);
+        et_soCMT = (TextInputEditText) findViewById(R.id.ttcn_cmt);
+        et_msBHXH = (TextInputEditText) findViewById(R.id.ttcn_bhxh);
+        et_NTNS = (TextInputEditText) findViewById(R.id.ttcn_namsinh);
+        et_Quoctich = (TextInputEditText) findViewById(R.id.ttcn_quoctich);
+        et_diachi = (TextInputEditText) findViewById(R.id.ttcn_diachihientai);
+        et_sdt = (TextInputEditText) findViewById(R.id.ttcn_sdt);
+        et_Email = (TextInputEditText) findViewById(R.id.ttcn_email);
         et_didenvunglanhtho = (EditText) findViewById(R.id.ttcn_diquavunglanhtho);
 
         btn_Xacnhan= (Button) findViewById(R.id.btn_xacnhankhaibao);
@@ -111,6 +114,61 @@ public class Khaibao extends AppCompatActivity {
         cb_maumantinh = (CheckBox) findViewById(R.id.check_benhmaumantinh);
         cb_thanmantinh = (CheckBox) findViewById(R.id.check_benhthanmantinh);
     }
+
+    public void initView(){
+
+        URLdatabase link = new URLdatabase();
+        String url = link.getApi()+"getThongtinnguoidung";
+        RequestQueue requestQueue = Volley.newRequestQueue(this.getApplicationContext());
+
+        StringRequest jsonStringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    et_hoten.setText(jsonObject.getString("hovaten"));
+                    et_soCMT.setText(jsonObject.getString("CMT"));
+                    et_soCMT.setEnabled(false);
+                    et_msBHXH.setText(jsonObject.getString("BHXH"));
+                    et_NTNS.setText(jsonObject.getString("ngaysinh"));
+                    et_Quoctich.setText(jsonObject.getString("quoctich"));
+                    et_diachi.setText(jsonObject.getString("diachi"));
+                    et_sdt.setText(jsonObject.getString("sodienthoai"));
+                    et_sdt.setEnabled(false);
+                    et_Email.setText(jsonObject.getString("email"));
+                    if (jsonObject.getString("gioitinh").equals("Nam")){
+                        rdb_nam.setChecked(true);
+                    }
+                    else rdb_nu.setChecked(true);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Khaibao.this, ""+error, Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //thongtincanhan
+                HashMap<String,String> params = new HashMap<>();
+                SharedPreferences userPref = getApplicationContext().getSharedPreferences("dataLogin",getApplicationContext().MODE_PRIVATE);
+                String CMT = userPref.getString("CMT",null);
+
+                params.put("CMT",CMT);
+
+                return params;
+            }
+        };
+        requestQueue.add(jsonStringRequest);
+    }
+
+
     public void setButton(){
         btn_Xacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,15 +189,28 @@ public class Khaibao extends AppCompatActivity {
 
 
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+        StringRequest jsonStringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONArray response) {
+            public void onResponse(String response) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean("success")){
+                        Intent intent = new Intent(getApplicationContext(),xacnhankhaibao.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(Khaibao.this, "Thất bại", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Log.e("AAAAAAAAA", "onErrorResponse: "+error);
             }
         }){
             @Override
@@ -158,7 +229,8 @@ public class Khaibao extends AppCompatActivity {
                 }
                 String quoctich = et_Quoctich.getText().toString().trim();
                 String diachi = et_diachi.getText().toString().trim();
-                String sodienthoai = et_sdt.getText().toString().trim();
+                String sdt = et_sdt.getText().toString().trim();
+
                 String email = et_Email.getText().toString().trim();
                 //thongtincanhan
                 String didenvungquocgia = et_didenvunglanhtho.getText().toString().trim();
@@ -172,7 +244,8 @@ public class Khaibao extends AppCompatActivity {
                 params.put("gioitinh",gioitinh);
                 params.put("quoctich",quoctich);
                 params.put("diachi",diachi);
-                params.put("sodienthoai",sodienthoai);
+                params.put("sdt",sdt);
+
                 params.put("email",email);
                 //thongtinbenh
                 params.put("tinhhinh",tinhhinh);
@@ -182,7 +255,7 @@ public class Khaibao extends AppCompatActivity {
                 return params;
             }
         };
-        requestQueue.add(jsonArrayRequest);
+        requestQueue.add(jsonStringRequest);
 
 
     }
@@ -208,37 +281,37 @@ public class Khaibao extends AppCompatActivity {
             tinhhinh+=cb_tiepxucnguoibenh.getText().toString();
         }
         if (cb_sot.isChecked()){
-            dauhieu+=cb_sot.getText().toString()+", ";
+            dauhieu+=cb_sot.getText().toString();
         }
         if (cb_dauhong.isChecked()){
-            dauhieu+=cb_dauhong.getText().toString()+", ";
+            dauhieu+=", "+cb_dauhong.getText().toString();
         }
         if (cb_ho.isChecked()){
-            dauhieu+=cb_ho.getText().toString()+", ";
+            dauhieu+=", "+cb_ho.getText().toString();
         }
         if (cb_khotho.isChecked()){
-            dauhieu+=cb_khotho.getText().toString()+", ";
+            dauhieu+=", "+cb_khotho.getText().toString();
         }
         if (cb_viemphoi.isChecked()){
-            dauhieu+=cb_viemphoi.getText().toString()+", ";
+            dauhieu+=", "+cb_viemphoi.getText().toString();
         }
         if (cb_metmoi.isChecked()){
-            dauhieu+=cb_metmoi.getText().toString()+", ";
+            dauhieu+=", "+cb_metmoi.getText().toString();
         }
         if (cb_viemphoi.isChecked()){
-            macbenh+=cb_viemphoi.getText().toString()+", ";
+            macbenh+=cb_viemphoi.getText().toString();
         }
         if (cb_ganmantinh.isChecked()){
-            macbenh+=cb_ganmantinh.getText().toString()+", ";
+            macbenh+=", "+cb_ganmantinh.getText().toString();
         }
         if (cb_maumantinh.isChecked()){
-            macbenh+=cb_maumantinh.getText().toString()+", ";
+            macbenh+=", "+cb_maumantinh.getText().toString();
         }
         if (cb_phoimantinh.isChecked()){
-            macbenh+=cb_phoimantinh.getText().toString()+", ";
+            macbenh+=", "+cb_phoimantinh.getText().toString();
         }
         if (cb_thanmantinh.isChecked()){
-            macbenh+=cb_thanmantinh.getText().toString()+", ";
+            macbenh+=", "+cb_thanmantinh.getText().toString();
         }
     }
     private boolean isEmpty(EditText etText) {

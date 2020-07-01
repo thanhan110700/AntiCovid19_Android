@@ -44,7 +44,7 @@ public class RequestActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
                     case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         overridePendingTransition(0,0);
                         return  true;
                     case R.id.nav_request:

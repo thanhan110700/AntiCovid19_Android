@@ -9,7 +9,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -17,15 +16,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.gson.JsonObject;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +32,7 @@ public class Nhapsodienthoai extends AppCompatActivity {
     TextInputLayout layout_sodienthoai;
     TextInputEditText et_first_sdt;
     Button btn_dangnhap,btn_dangky;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +46,8 @@ public class Nhapsodienthoai extends AppCompatActivity {
         btn_dangky = (Button) findViewById(R.id.btn_dangky);
         btn_dangnhap = (Button) findViewById(R.id.btn_dangnhap);
         layout_sodienthoai = (TextInputLayout) findViewById(R.id.layout_sodienthoai);
+
+
     }
     public void setClickButtonDangnhap(){
         btn_dangnhap.setOnClickListener(new View.OnClickListener() {

@@ -5,119 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+    >
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/th_ng_tin_d_ch_b_nh"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-        
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tl_select"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="#f5f6fa"
-                    app:tabMode="fixed"
-                    app:tabSelectedTextColor="#e84118"
-                    app:tabTextColor="#2f3640"
-                    app:tabIndicatorColor="#34e7e4"
-
-                    />
-
-                    <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vp_select"
-                    android:layout_width="match_parent"
-                    android:layout_height="125dp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="2dp"
-                >
-                <Button
-                    android:id="@+id/btn_khaibao"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:background="#3c40c6"
-                    android:layout_marginRight="2dp"
-                    android:text="KHAI BÁO
-                                     Y TẾ TỰ NGUYỆN"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"/>
-                <Button
-                    android:id="@+id/btn_phongchong"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="2dp"
-                    android:background="#3c40c6"
-                    android:text="HƯỚNG DẪN
-                     PHÒNG CHỐNG DỊCH"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"/>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#ecf0f1"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="200dp"
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/iconapp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

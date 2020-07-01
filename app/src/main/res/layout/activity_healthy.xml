@@ -10,16 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="THEO DÕI SỨC KHỎE"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:gravity="center"/>
+            style="@style/Tittle"
+            />
         <com.google.android.material.tabs.TabLayout
             android:layout_marginTop="10dp"
             android:id="@+id/tl_select_healthy"

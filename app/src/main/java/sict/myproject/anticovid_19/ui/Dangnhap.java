@@ -3,6 +3,7 @@ package sict.myproject.anticovid_19.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -44,6 +45,8 @@ public class Dangnhap extends AppCompatActivity {
     TextInputLayout layout_Matkhau;
     TextInputEditText et_matkhau;
     Button btn_actiondangnhap;
+    SharedPreferences userPref;
+
 
 
 
@@ -127,12 +130,21 @@ public class Dangnhap extends AppCompatActivity {
                     if (jsonObject.getString("success")=="true"){
                         JSONObject user = jsonObject.getJSONObject("user");
                         //tạo user
-                        SharedPreferences userPref = getApplicationContext().getSharedPreferences("user",getApplicationContext().MODE_PRIVATE);
-
-                        SharedPreferences.Editor editor = userPref.edit();
-                        editor.putString("token",jsonObject.getString("token"));
-                        editor.putString("id",user.getString("id"));
-                        editor.apply();
+                        userPref = getApplicationContext().getSharedPreferences("dataLogin",getApplicationContext().MODE_PRIVATE);
+                        SharedPreferences oBoard = getApplicationContext().getSharedPreferences("oBoard", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editorOBoard = oBoard.edit();
+                        editorOBoard.putBoolean("isFirstTime",false);
+                        editorOBoard.apply();
+                        SharedPreferences.Editor editorUser = userPref.edit();
+                        editorUser.putString("token",jsonObject.getString("token"));
+                        editorUser.putString("id",user.getString("id"));
+                        editorUser.putString("sodienthoai",user.getString("sodienthoai"));
+                        editorUser.putString("CMT",user.getString("CMT"));
+                        editorUser.putBoolean("isLoggedIn",true);
+                        editorUser.commit();
+                        editorUser.apply();
+                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                        startActivity(intent);
 
                     }
                     if (jsonObject.getString("success")=="false"){

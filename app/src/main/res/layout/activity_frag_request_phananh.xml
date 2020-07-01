@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:paddingBottom="40dp">
+    android:paddingBottom="50dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,35 +56,66 @@
             style="@style/checkbox_request"
             android:text="Có người tiếp xúc với trường hợp đi về từ vùng dịch COVID-19"
             />
-        <TextView
-            android:text="Nội dung phản ánh khác"
-            style="@style/textview_request_phananh"
-            />
-        <EditText
-            android:id="@+id/edit_request_noidungphananh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <TextView
-            android:text="Thời gian phát hiện *"
-            style="@style/textview_request_phananh"
-            />
 
-        <DatePicker
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:datePickerMode="spinner"
-            android:calendarViewShown="false"
-            />
-        <TextView
-            android:text="Địa điểm xảy ra *"
-            style="@style/textview_request_phananh"
-            />
-        <EditText
-            android:id="@+id/edit_request_diadiemxayra"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_NDphananh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:layout_marginTop="15dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_request_noidungphananh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:hint="Nội dung phản ánh khác"
+                android:textColor="#000000"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_chonngay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_request_chonngay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:hint="Thời gian xảy ra"
+                android:textColorHint="#dff9fb"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_DDxayra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_request_diadiemxayra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:hint="Địa điểm xảy ra"
+                android:textColorHint="#dff9fb"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
         <CheckBox
 
             android:id="@+id/check_request_phananh_camket"

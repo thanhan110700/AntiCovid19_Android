@@ -16,15 +16,9 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="DANH MỤC"
-
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:gravity="center"/>
+            style="@style/Tittle"
+             />
         <Button
             android:id="@+id/btn_menu_thongtincanhan"
             android:drawableLeft="@drawable/ic_account"
@@ -35,21 +29,25 @@
             android:id="@+id/btn_menu_giamsatcachly"
             android:drawableLeft="@drawable/ic_security_black_24dp"
             android:text="Giám sát cách ly"
-            android:background="#30336b"
             style="@style/btn_menu"
             />
         <Button
             android:id="@+id/btn_menu_dieukhoansudung"
             android:drawableLeft="@drawable/ic_insert_drive_file_black_24dp"
             android:text="Điều khoản sử dụng"
-            android:background="#30336b"
             style="@style/btn_menu"
             />
         <Button
             android:id="@+id/btn_menu_guihoidap"
             android:drawableLeft="@drawable/ic_reply"
             android:text="Gửi hỏi đáp"
-            android:background="#30336b"
+            style="@style/btn_menu"
+            />
+        <Button
+            android:id="@+id/btn_menu_logout"
+            android:drawableLeft="@drawable/ic_logout"
+            android:text="Đăng xuất"
+
             style="@style/btn_menu"
             />
     </LinearLayout>

@@ -11,33 +11,31 @@
         style="@style/textview_request_phananh"
         />
     <CheckBox
-        android:id="@+id/check_khaobaotiepxuc_coditunuocngoai"
+        android:id="@+id/check_khaibaotiepxuc_coditunuocngoai"
         android:background="#dcdde1"
         android:text="Có đi từ nước ngoài về Việt Nam hay không"
         style="@style/checkbox_request"
         />
     <CheckBox
-        android:id="@+id/check_khaobaotiepxuc_cotiepxuc"
+        android:id="@+id/check_khaibaotiepxuc_cotiepxuc"
         android:background="#dcdde1"
         android:text="Có tiếp xúc với trường hợp đi từ nước ngoài về Việt Nam hay không?"
         style="@style/checkbox_request"
         />
     <CheckBox
-
-        android:id="@+id/check_khaobaotiepxuc_cobietxungquanh"
+        android:id="@+id/check_khaibaotiepxuc_cobietxungquanh"
         android:text="Có biết xung quanh có trường hợp đi từ nước ngoài về Việt Nam không?"
         android:background="#dcdde1"
         style="@style/checkbox_request"
         />
     <CheckBox
-
-        android:id="@+id/check_request_camket"
+        android:id="@+id/check_khaibaotiepxuc_camket"
         android:text="tôi cam kết những thông tin khai báo là đúng sự thật và đồng ý chia sẻ vị trí để cơ quan chức năng có thể hổ trợ tốt nhất"
         android:textColor="#e67e22"
         style="@style/checkbox_request"
         />
     <Button
-        android:id="@+id/btn_request_guithongtinkhaibao"
+        android:id="@+id/btn_khaibaotiepxuc_guithongtinkhaibao"
         android:layout_height="wrap_content"
         style="@style/btn_menu"
         android:text="Gửi thông tin khai báo"

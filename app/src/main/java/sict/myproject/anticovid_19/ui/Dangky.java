@@ -51,7 +51,6 @@ public class Dangky extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),KhaibaoDangky.class);
                     intent.putExtra("sodienthoai",sodienthoai);
                     intent.putExtra("matkhau",et_matkhauDK.getText().toString());
-                    intent.putExtra("matkhaun",et_nhaplaimkDK.getText().toString());
                     startActivity(intent);
                 }
                 ChangeInput();
@@ -113,7 +112,7 @@ public class Dangky extends AppCompatActivity {
         }
         if (!et_matkhauDK.getText().toString().equals(et_nhaplaimkDK.getText().toString())){
             layout_nhaplaimkDK.setErrorEnabled(true);
-            layout_nhaplaimkDK.setError("Nhập lại mật khẩu không chính xác"+et_matkhauDK.getText().toString().trim() + et_nhaplaimkDK.getText().toString().trim()+"j");
+            layout_nhaplaimkDK.setError("Nhập lại mật khẩu không chính xác");
             return  false;
         }
 

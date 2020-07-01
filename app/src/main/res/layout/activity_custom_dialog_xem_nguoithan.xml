@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:context=".Fragment.Frag_Healthy_Canhan">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Thông tin người thân"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:background="#30336b"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên người thân: "
+                style="@style/textview_xemnguoithan1"/>
+            <TextView
+                android:id="@+id/tv_xemnguoithan_tennguoithan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name"
+                style="@style/textview_xemnguoithan2"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quan hệ: "
+                style="@style/textview_xemnguoithan1"/>
+            <TextView
+                android:id="@+id/tv_xemnguoithan_quanhe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quan hệ"
+                style="@style/textview_xemnguoithan2"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tình trạng: "
+                style="@style/textview_xemnguoithan1"/>
+            <TextView
+                android:id="@+id/tv_xemnguoithan_tinhtrang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tình trạng"
+                style="@style/textview_xemnguoithan2"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/check_xemnguoithan_sot"
+                android:text="Sốt"
+                style="@style/checkbox_healthy"
+                />
+            <CheckBox
+                android:id="@+id/check_xemnguoithan_ho"
+                android:text="Ho"
+                style="@style/checkbox_healthy"
+                />
+            <CheckBox
+                android:id="@+id/check_xemnguoithan_khotho"
+                android:text="Khó thở"
+                style="@style/checkbox_healthy"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/check_xemnguoithan_daunguoi"
+                android:text="Đau người, mệt mỏi"
+                style="@style/checkbox_healthy"
+                />
+            <CheckBox
+                android:id="@+id/check_xemnguoithan_khoemanh"
+                android:text="Khỏe mạnh"
+                style="@style/checkbox_healthy"
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_xemnguoithan_guithongtin"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Sửa tình trạng"
+            style="@style/btn_menu"
+            android:layout_marginBottom="10dp"
+            />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
